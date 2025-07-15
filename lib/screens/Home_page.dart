@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-        
           Container(
             width: double.infinity,
             height: double.infinity,
@@ -56,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   buildPage(
                     size,
-                    'assets/Image9.png',
+                    'assets/Image.png',
                     'Discover new possibilities with ',
                     'Blockchain.',
                     'Secure, transparent, and decentralized technologies for the future.',
@@ -66,17 +65,22 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          
           Positioned(
             top: 40,
             right: 20,
             child: TextButton(
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const Marketscreens()),
+                );
               },
               child: const Text(
                 'Skip',
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -86,7 +90,7 @@ class _HomePageState extends State<HomePage> {
             left: 20,
             child: SmoothPageIndicator(
               controller: controller,
-              count: 3,
+              count: 2,
               effect: const WormEffect(
                 dotHeight: 10,
                 dotWidth: 10,
@@ -98,9 +102,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-           Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => const Marketscreens()),
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const Marketscreens()),
           );
         },
         backgroundColor: Colors.black,
@@ -147,10 +151,7 @@ class _HomePageState extends State<HomePage> {
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                    ),
+                    style: const TextStyle(color: Colors.black, fontSize: 25),
                     children: [
                       TextSpan(text: text1),
                       TextSpan(

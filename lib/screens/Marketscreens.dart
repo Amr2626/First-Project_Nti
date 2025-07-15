@@ -12,9 +12,10 @@ class Marketscreens extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               const Text.rich(
                 TextSpan(
                   text: 'Selling the ',
@@ -22,7 +23,9 @@ class Marketscreens extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: 'MOST POPULAR',
-                      style: TextStyle(color: Color.fromARGB(255, 158, 238, 161)),
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 158, 238, 161),
+                      ),
                     ),
                     TextSpan(text: '\nNFT is only here'),
                   ],
@@ -35,26 +38,29 @@ class Marketscreens extends StatelessWidget {
                     label: const Text('Trending'),
                     backgroundColor: const Color.fromARGB(255, 158, 238, 161),
                     shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),   
-                   ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
                   const SizedBox(width: 8),
-                  Chip(label: const Text('By Artist') ,
-                  shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(30),  
-                   ),
+                  Chip(
+                    label: const Text('By Artist'),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
                   const SizedBox(width: 8),
-                  Chip(label: const Text('ETH'), 
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30), 
+                  Chip(
+                    label: const Text('ETH'),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                    ),
+                  ),
                   const SizedBox(width: 8),
-                  Chip(label: const Text('BTC'), 
-                  shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30), 
-                  ), 
+                  Chip(
+                    label: const Text('BTC'),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
                 ],
               ),
@@ -72,7 +78,9 @@ class Marketscreens extends StatelessWidget {
                 child: Column(
                   children: [
                     ClipRRect(
-                      borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(16),
+                      ),
                       child: Image.asset(
                         'assets/Imgae.png',
                         height: 200,
@@ -87,17 +95,27 @@ class Marketscreens extends StatelessWidget {
                         children: [
                           const Text(
                             'Hypebest Apes G',
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           const SizedBox(height: 8),
                           Row(
-                            
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  SvgPicture.asset('assets/Icon.svg', height: 24, width: 24, color: Colors.black),
-                                  const SizedBox(width: 6), 
+                                  SvgPicture.asset(
+                                    'assets/Icon.svg',
+                                    height: 24,
+                                    width: 24,
+                                    colorFilter: const ColorFilter.mode(
+                                      Colors.black,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 6),
                                   const Text('Highest Bid Today\n2.23 ETH'),
                                 ],
                               ),
@@ -110,9 +128,11 @@ class Marketscreens extends StatelessWidget {
                             width: double.infinity,
                             child: ElevatedButton.icon(
                               onPressed: () {
-                                 Navigator.push(
-                                context,
-                                 MaterialPageRoute(builder: (_) =>  DetailPage()),
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const DetailPage(),
+                                  ),
                                 );
                               },
                               icon: const Icon(Icons.gavel),
@@ -122,10 +142,10 @@ class Marketscreens extends StatelessWidget {
                                 foregroundColor: Colors.white,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -137,17 +157,15 @@ class Marketscreens extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const Spacer(),
-                   Icon(Icons.more_horiz),
+                  const Icon(Icons.more_horiz),
                 ],
               ),
-             
+
               const SizedBox(height: 10),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/Image.png',
-                  ),
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage('assets/Image.png'),
                 ),
                 title: const Text('Darlene Robertson'),
                 subtitle: const Text('125k Followers'),
@@ -159,16 +177,11 @@ class Marketscreens extends StatelessWidget {
                   child: const Text('Follow'),
                 ),
               ),
-                             
             ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
